@@ -1,0 +1,99 @@
+// מבנה קבצים ותיקיות
+FaceFrameApp/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   └── manifest.json
+├── src/
+│   ├── assets/
+│   │   ├── FaceFrameLogo.png
+│   │   └── futuristic-bg.jpg
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── Header.tsx
+│   │   │   └── Footer.tsx
+│   │   ├── faces/
+│   │   │   ├── FaceCard.tsx
+│   │   │   └── FaceList.tsx   ********
+│   │   ├── images/
+│   │   │   ├── ImageCard.tsx
+│   │   │   └── ImageUploader.tsx
+│   │   └── ui/
+│   │       └── GradientButton.tsx
+│   ├── pages/
+│   │   ├── About.tsx
+│   │   ├── Faces.tsx
+│   │   ├── Home.tsx    *******
+│   │   └── Images.tsx
+│   ├── slices/
+│   │   ├── facesSlice.ts
+│   │   └── imagesSlice.ts
+│   ├── store/
+│   │   ├── hooks.ts
+│   │   └── index.ts
+│   ├── theme/
+│   │   └── customTheme.ts
+│   ├── App.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   └── types.ts
+├── package.json
+└── tsconfig.json
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+
+ 
+ // vite.config.ts
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    proxy: {
+      '/images': 'http://localhost:8000',
+      '/faces': 'http://localhost:8000'
+    }
+  }
+});
+
+// public/index.html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FaceFrame</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+// public/manifest.json
+{
+  "short_name": "FaceFrame",
+  "name": "FaceFrame - AI Photo Management",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#00e5ff",
+  "background_color": "#0b0f19"
+}
+
+
