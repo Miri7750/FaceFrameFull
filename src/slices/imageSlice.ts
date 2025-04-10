@@ -3,7 +3,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { ImageData } from '../types/types';
-const API_BASE_URL = 'http://127.0.0.1:8004';
+const API_BASE_URL = 'http://127.0.0.1:8005';
 axios.defaults.baseURL = API_BASE_URL;
 export const fetchImages = createAsyncThunk('images/fetchImages', async () => {
   const res = await axios.get<ImageData[]>('/images/');
