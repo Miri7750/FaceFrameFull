@@ -20,7 +20,8 @@
 //   );
 // }
 // src/pages/About.tsx
-import { Box, Typography, Container, Paper } from '@mui/material';
+// import { Box, Typography, Container, Paper } from '@mui/material';
+import { Typography, Container, Paper } from '@mui/material';
 
 export default function About() {
   return (

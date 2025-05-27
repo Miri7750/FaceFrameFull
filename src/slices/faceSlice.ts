@@ -31,10 +31,11 @@
 // export default facesSlice.reducer;
 
 // src/slices/facesSlice.ts
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+// import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { FaceData, ImageData } from '../types/types';
-const API_BASE_URL = 'http://127.0.0.1:8005';
+const API_BASE_URL = 'http://127.0.0.1:8004';
 
 export const fetchFaces = createAsyncThunk(API_BASE_URL+'/faces/fetchFaces', async () => {
   const res = await axios.get<FaceData[]>(API_BASE_URL+'/faces/');
